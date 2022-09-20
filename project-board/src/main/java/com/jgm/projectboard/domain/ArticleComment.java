@@ -20,7 +20,7 @@ import java.util.Objects;
         @Index(columnList = "createBy")
 })
 @Entity
-public class ArticleComment {
+public class ArticleComment extends AuditingFields{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,19 +31,6 @@ public class ArticleComment {
     @Setter
     @Column(nullable = false, length = 500)
     private String content; // 내용
-
-    @CreatedDate
-    @Column(nullable = false)
-    private LocalDateTime createAt; // 생성 날짜
-    @CreatedBy
-    @Column(nullable = false)
-    private String createBy; // 생성자
-    @LastModifiedDate
-    @Column(nullable = false)
-    private LocalDateTime modifiedAt; // 수정 날짜
-    @LastModifiedBy
-    @Column(nullable = false)
-    private String modifiedBy; // 수정자
 
     protected ArticleComment() {
     }
