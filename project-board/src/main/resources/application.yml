@@ -29,8 +29,8 @@ spring:
 
   data:
     rest:
-      /api
-    detection-strategy: annotated
+      base-path: /api
+      detection-strategy: annotated
 
 logging:
   level:
